@@ -1,21 +1,19 @@
 package main;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 public class PrimeNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number = 0;
-        try {
+        if (scanner.hasNextInt()) {
             number = scanner.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Please enter Integer");
-        }
-
-        for (int i = 1; i <= number; i++) {
-            if (primeNumberCheck(i) == true) {
-                System.out.print(i + ", ");
+            for (int i = 1; i <= number; i++) {
+                if (primeNumberCheck(i) == true) {
+                    System.out.print(i + ", ");
+                }
             }
+        } else {
+            System.out.println("Input value is not Integer");
         }
     }
 
